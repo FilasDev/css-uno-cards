@@ -1,0 +1,349 @@
+#playing-cards{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card{
+  font-family: "Helvetica Neue", "Arial Black", sans-serif;
+  font-size:30px;
+  color:#F4F2EE;
+  text-shadow: 3px 3px 0px #000000;
+  display:flex;
+  box-sizing:border-box;
+  position:relative;
+  flex-flow:row wrap;
+  justify-content:space-between;
+  width:100px;
+  height:164px;
+  border:6.25px solid #F4F2EE;
+  border-radius:6.25px;
+  background-color:green;
+  transition: scale 0.2s ease-out;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  box-sizing:border-box;
+  left:50%;
+  top:50%;
+  width:87%;
+  height:87%;
+  background-color:transparent;
+  border:5px solid #F4F2EE;
+  border-radius:50%;
+  translate: -50% -50%;
+  rotate:30deg;
+}
+
+.card div{
+  position:absolute;
+  display:flex;
+}
+
+.left{
+  align-self:flex-start;
+  top:-2%;
+  left:4%;
+}
+
+.middle{
+  display:flex;
+  flex-flow:column wrap;
+  align-self:center;
+  font-size:60px;
+  text-shadow: 4px 4px 0px #000000;
+  top:50%;
+  left:50%;
+  translate:-55% -55%;
+
+}
+
+.right{
+  align-self:flex-end;
+  right:4%;
+  bottom:-2%;
+  rotate:180deg;
+}
+
+.blue{
+  background-color:#0055A5;
+}
+
+.red{
+  background-color:#ED1C24;
+}
+
+.yellow{
+  background-color:#FFD200;
+}
+
+.skip div{
+  width:25px;
+  height:25px;
+  box-sizing:border-box;
+  border:5px solid #F4F2EE;
+  border-radius:50%;
+  background-color:transparent;
+  filter: drop-shadow(3px 3px 0px #000000);
+}
+
+.skip div::before{
+  content:"";
+  position:absolute;
+  width:20px;
+  height:4px;
+  background-color:#F4F2EE;
+  rotate:-45deg;
+  top: 50%;
+  left: 50%;
+  translate: -53% -50%;
+}
+
+.skip .middle{
+  translate:-50% -55%;
+  width:50px;
+  height:50px;
+  border:8px solid #F4F2EE;
+  filter: drop-shadow(4px 4px 0px #000000);
+}
+
+.skip .middle::before{
+  top:0%;
+  left:0%;
+  width:40px;
+  height:8px;  
+  translate:-5% 150%;
+}
+
+.skip .left{
+  translate:3% 35%;
+}
+
+.skip .right{
+  translate:-3% -35%;
+}
+
+.reverse div{
+  width:8.625px;
+  height:15px;
+  border-radius:60%;
+  background:linear-gradient(#F4F2EE 45%,black 45%, black 55%,#F4F2EE 55%);
+  translate:90% 100%;
+  rotate:-45deg;
+  filter: drop-shadow(3px 3px 0px #000000);
+}
+
+.reverse div::before{
+  position:absolute;
+  content:"";
+  width:19px;
+  height:19px;
+  background-color:#F4F2EE;
+  translate:10% -32%;
+  clip-path:polygon(11% 62%,37% 36%,25% 24%,75% 25%,75% 74%,63% 62%,37% 88%);
+  rotate:45deg;
+}
+
+.reverse div::after{
+  position:absolute;
+  content:"";
+  width:19px;
+  height:19px;
+  background-color:#F4F2EE;
+  translate:-61% 11%;
+  clip-path:polygon(11% 62%,37% 36%,25% 24%,75% 25%,75% 74%,63% 62%,37% 88%);
+  rotate:225deg;
+}
+
+.reverse .middle{
+  width:17px;
+  height:30px;
+  translate:-70% -40%;
+  filter: drop-shadow(4px 4px 0px #000000);
+}
+
+.reverse .middle::before,.reverse .middle::after{
+  width:38px;
+  height:38px;
+}
+
+.reverse .right{
+  translate:-100% -100%;
+  filter: drop-shadow(-2px -2px 0px #000000);  
+}
+
+.plus2 div{
+  font-size:25px;
+  translate:50% 5%;
+  position:relative;
+  text-shadow:none;
+  filter: drop-shadow(3px 3px 0px #000000);  
+}
+
+.plus2 .left::before,.plus2 .right::before,.plus2 .left::after,.plus2 .right::after{
+  content:"";
+  position:absolute;
+  background-color:#F4F2EE;
+  transform-origin:center center;
+  top:50%;
+  left:-27%;
+  translate:-50% -50%;
+}
+
+.plus2 .left::before,.plus2 .right::before{
+  width:3px;
+  height:9px;
+}
+
+.plus2 .left::after,.plus2 .right::after{
+  width:9px;
+  height:3px;
+}
+
+.plus2 .right{
+  translate:-50% 0%;
+}
+
+.plus2 .middle{
+  position:absolute;
+  width:20px;
+  height:32.8px;
+  background-color:#F4F2EE;
+  translate:-30% -78%;
+  border-radius:2px;
+  border:2px solid black;
+  filter: none;
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.plus2 .middle::before{
+  content:"";
+  width:20px;
+  height:32.8px;
+  background-color:#F4F2EE;
+  translate:-50% 50%; 
+  border-radius:2px;
+  border:2px solid black;
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.plus4,.wild{
+  background-color:#000000; 
+}
+
+.plus4::before,.wild::before{
+  background-color:#F4F2EE;
+}
+
+.plus4 div{
+  font-size:25px;
+  translate:70% 5%;
+  position:relative;
+  text-shadow:none;
+}
+
+.plus4 .left::before,.plus4 .right::before{
+  content:"";
+  position:absolute;
+  background-color:#F4F2EE;
+  transform-origin:center center;
+  top:50%;
+  left:-27%;
+  translate:-65% -50%;
+  width:10px;
+  height:10px;
+  clip-path:polygon(33% 0%,66% 0%,66% 33%,100% 33%,100% 66%,66% 66%,66% 100%,33% 100%,33% 66%,0% 66%,0% 33%,33% 33%)  
+}
+
+.plus4 .left::after,.plus4 .right::after{
+  content:"";
+  position:absolute;
+  width:20px;
+  height:32.8px;
+  background-color:green;
+  translate:-25% 230%; 
+  border-radius:2px;
+  border:2px solid black;
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.plus4 .right{
+  translate:-70%;
+}
+
+.plus4 .right::after{
+  box-shadow: -2px -2px 0px #000000;
+  background-color:#FFD200;
+}
+
+.plus4 .middle{
+  position:absolute;
+  width:20px;
+  height:32.8px;
+  background-color:#0055A5;
+  translate:-80% -78%;
+  border-radius:2px;
+  border:2px solid black;
+  filter: none;
+  box-shadow: 2px 2px 0px #000000;
+  z-index:4;
+}
+
+.plus4 .middle::before{
+  content:"";
+  width:20px;
+  height:32.8px;
+  background-color:#ED1C24;
+  translate:50% 50%; 
+  border-radius:2px;
+  border:2px solid black;
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.wild div {
+  position: absolute;
+  box-sizing: content-box; 
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color:#F4F2EE;
+  scale: 0.33 0.54;
+  rotate:30deg;
+  translate:-28% -8%;
+}
+
+.wild div::before{
+  content:"";
+  position: absolute;
+  box-sizing: content-box; 
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border: 25px solid transparent;
+  border-top-color: #0055A5;
+  border-bottom-color: #FFD200;
+  border-left-color: #ED1C24;
+  border-right-color: green;
+  scale: 0.95 1.114;
+  rotate:20deg;
+  translate:10% 11%;
+}
+
+.wild .right{
+  translate:25% 10%;
+}
+
+.wild .middle{
+  scale:1.4 2.3;
+  translate:-49% -51%;
+  background-color:transparent;
+  rotate:27deg;
+}
+
+.card:hover{
+  scale:1.2 1.2;
+}
+
