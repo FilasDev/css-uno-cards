@@ -4,6 +4,8 @@
 
 ![Project Preview](./preview.png)
 
+🔗 **[Live Demo](https://filasdev.github.io/css-uno-cards/)**
+
 ## Overview
 It's a page that shows a set of uno cards designed to meet a freeCodeCamp certification project's requirements. You can add cards and change their colors/numbers/functions by adding and altering divs following the pre-existing element labeling logic. I might add more card variety in the future.
 
